@@ -1,0 +1,1 @@
+enum ApiHttpStatus {succeeded, loading, unknown, error}
