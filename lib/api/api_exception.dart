@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart' hide Headers;
 
-class ApiException implements Exception {
+final class ApiException implements Exception {
 
   int _errorCode = -1;
   String _errorMessage = "";
@@ -47,7 +47,7 @@ class ApiException implements Exception {
         _errorMessage = "Receive timeout in connection";
         break;
       case DioExceptionType.badResponse:
-        _errorMessage = "Received invalid status code: ${error.response?.statusCode ?? -1}";
+        _errorMessage = "Received invalid status code: ${error.response?.statusCode}";
         break;
       case DioExceptionType.badCertificate:
         _errorMessage = "auth expired";

@@ -14,6 +14,10 @@ UserInfo _$UserInfoFromJson(Map<String, dynamic> json) => UserInfo(
       updatedAt: json['updatedAt'] as String?,
       userName: json['userName'] as String?,
       userAvatar: json['userAvatar'] as String?,
+      classes: (json['classes'] as List<dynamic>?)
+              ?.map((e) => ClassInfo.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <ClassInfo>[],
     );
 
 Map<String, dynamic> _$UserInfoToJson(UserInfo instance) => <String, dynamic>{
@@ -24,4 +28,5 @@ Map<String, dynamic> _$UserInfoToJson(UserInfo instance) => <String, dynamic>{
       'updatedAt': instance.updatedAt,
       'userName': instance.userName,
       'userAvatar': instance.userAvatar,
+      'classes': instance.classes,
     };

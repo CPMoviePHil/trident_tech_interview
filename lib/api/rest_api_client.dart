@@ -32,11 +32,11 @@ abstract class RestApiClient {
 
   // 授課講師列表
   @GET("/api/user/list")
-  Future<ApiResponse<List<UserInfo>>> getTeacherList();
+  Future<ApiResponse<List<UserInfo>>> getUserList(@Query("type") int userType);
 
   // 授課講師所開課程列表
   @GET("/api/class/list")
-  Future<ApiResponse<List<ClassInfo>>> getClassListByTeacher(@Query("userId") String userId, @Query("type") int userType);
+  Future<ApiResponse<List<ClassInfo>>> getClassListByTeacher(@Query("userId") String userId);
 
   // 建立新講師
   @POST("/api/user/register")

@@ -10,7 +10,7 @@ final class ClassListRepository extends BaseRepository<List<ClassInfo>> {
 
   Future<ApiResponse<List<ClassInfo>>> _request() async {
     if (kUseMockData) {
-      return ApiResponse<List<ClassInfo>>.fromJson(mockDataUserInfo);
+      return ApiResponse<List<ClassInfo>>.fromJson(mockDataClassList);
     } else {
       ApiResponse<List<ClassInfo>> response;
       try {

@@ -75,9 +75,9 @@ class _RestApiClient implements RestApiClient {
   }
 
   @override
-  Future<ApiResponse<List<UserInfo>>> getTeacherList() async {
+  Future<ApiResponse<List<UserInfo>>> getUserList(int userType) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'type': userType};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -103,14 +103,9 @@ class _RestApiClient implements RestApiClient {
 
   @override
   Future<ApiResponse<List<ClassInfo>>> getClassListByTeacher(
-    String userId,
-    int userType,
-  ) async {
+      String userId) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'userId': userId,
-      r'type': userType,
-    };
+    final queryParameters = <String, dynamic>{r'userId': userId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(

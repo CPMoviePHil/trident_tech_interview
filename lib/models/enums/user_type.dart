@@ -1,0 +1,1 @@
+enum UserType {student, demonstrator, lecturer, professor, unknown}
