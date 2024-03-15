@@ -1,1 +1,1 @@
-enum UserType {student, demonstrator, lecturer, professor, unknown}
+enum UserType {student, demonstrator, lecturer, seniorLecturer, professor, unknown}
