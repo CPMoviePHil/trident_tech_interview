@@ -5,8 +5,10 @@ import 'package:dio/dio.dart';
 import '../api/api_helper.dart';
 
 import '../models/enums/api_http_status.dart';
-
 import '../models/models.dart';
+
+import '../utils/constants.dart';
+import '../utils/log_util.dart';
 
 abstract class BaseRepository<T>{
 
@@ -21,7 +23,7 @@ abstract class BaseRepository<T>{
   }
 
   BaseRepository() {
-    _restApiClient = RestApiClient(_dio, baseUrl: "https://example.com");
+    _restApiClient = RestApiClient(_dio, baseUrl: kApiBaseUrl);
   }
 
   Future<void> call({bool loading = true});
@@ -36,7 +38,7 @@ abstract class BaseRepository<T>{
       );
     }
     await function().then((response) {
-      if (response.result && response.message == "success") {
+      if (response.result) {
         _controller.sink.add(
           StreamResponse<T>(apiHttpStatus: ApiHttpStatus.succeeded, value: response.value),
         );
@@ -61,7 +63,7 @@ abstract class BaseRepository<T>{
       );
     }
     await f(val).then((response) {
-      if (response.result && response.message == "success") {
+      if (response.result) {
         _controller.sink.add(
           StreamResponse<T>(apiHttpStatus: ApiHttpStatus.succeeded, value: response.value),
         );

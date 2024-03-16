@@ -1,0 +1,13 @@
+{
+  "@@locale": "zh-TW",
+  "lecturer_list": "講師清單",
+  "class_list": "課程清單",
+  "student_list": "學生清單",
+  "language_setting_title": "語系",
+  "change_lang_alert": "跟改語系: {lang}",
+  "page_loading_error": "載入錯誤",
+  "demonstrator": "簡報者",
+  "lecturer": "講師",
+  "senior_lecturer": "資深講師",
+  "professor": "教授"
+}

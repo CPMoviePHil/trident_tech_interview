@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "lecturer_list": "Lecturer List",
+  "class_list": "Class List",
+  "student_list": "Student List",
+  "language_setting_title": "Language",
+  "change_lang_alert": "Change Language: {lang}",
+  "page_loading_error": "Page Loading Error",
+  "demonstrator": "Demonstrator",
+  "lecturer": "Lecturer",
+  "senior_lecturer": "Senior Lecturer",
+  "professor": "Professor"
+}

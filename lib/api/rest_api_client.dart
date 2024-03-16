@@ -3,6 +3,7 @@ import 'package:retrofit/retrofit.dart';
 
 import '../models/models.dart';
 
+import '../models/user_list_request.dart';
 import 'api_response.dart';
 
 part 'rest_api_client.g.dart';
@@ -32,7 +33,7 @@ abstract class RestApiClient {
 
   // 授課講師列表
   @GET("/api/user/list")
-  Future<ApiResponse<List<UserInfo>>> getUserList(@Query("type") int userType);
+  Future<ApiResponse<List<UserInfo>>> getUserList(@Body() UserListRequest request);
 
   // 授課講師所開課程列表
   @GET("/api/class/list")

@@ -28,7 +28,7 @@ final mockDataTeacherList = {
       'userType': 2,
       'updatedAt': '2021-02-12 13:50:18',
       'userName': "Floyd Miles",
-      "userAvatar": "https://pbs.twimg.com/profile_images/1480854383697219584/2i8y1ARB_400x400.jpg",
+      "userAvatar": "https://pbs.twimg.com/profile_images/1766480267353661440/u3cPpgVg_400x400.jpg",
       'classes': [
         _mdClass4,
       ],
@@ -39,7 +39,7 @@ final mockDataTeacherList = {
       'userType': 3,
       'updatedAt': '2022-03-14 12:50:18',
       'userName': "Savannah Nguyen",
-      "userAvatar": "https://pbs.twimg.com/profile_images/1480854383697219584/2i8y1ARB_400x400.jpg",
+      "userAvatar": "https://pbs.twimg.com/profile_images/1568417445211152388/YsUHG-Ea_400x400.jpg",
       'classes': [
         _mdClass5
       ],
@@ -50,7 +50,7 @@ final mockDataTeacherList = {
       'userType': 4,
       'updatedAt': '2029-02-13 12:50:18',
       'userName': "Jenny Wilson",
-      "userAvatar": "https://pbs.twimg.com/profile_images/1743575668989050880/tdXrzHbR_400x400.jpg",
+      "userAvatar": "https://pbs.twimg.com/profile_images/1648334723725361152/ev7V1230_400x400.jpg",
       'classes': [
         _mdClass6
       ],
@@ -61,7 +61,7 @@ final mockDataTeacherList = {
       'userType': 4,
       'updatedAt': '2019-02-13 12:50:18',
       'userName': "Floyd Miles",
-      "userAvatar": "https://pbs.twimg.com/profile_images/1656596986097987587/XvQcye3R_400x400.jpg",
+      "userAvatar": "https://pbs.twimg.com/profile_images/1750659903285264384/dG8XVYRU_400x400.jpg",
       'classes': [
         _mdClass6,
         _mdClass7

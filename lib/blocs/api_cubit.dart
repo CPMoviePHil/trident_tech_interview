@@ -9,12 +9,13 @@ import '../models/enums/api_http_status.dart';
 import '../models/models.dart';
 
 import '../repositories/base_repository.dart';
+import '../utils/log_util.dart';
 
 part 'api_cubit_state.dart';
 
-abstract class ApiCubit<T> extends Cubit<ApiCubitState<T>> {
+abstract class _ApiCubit<T> extends Cubit<ApiCubitState<T>> {
 
-  ApiCubit({
+  _ApiCubit({
     required BaseRepository<T> repository,
   }) : super(ApiCubitState<T>.unknown()) {
     _repository = repository;
@@ -24,6 +25,7 @@ abstract class ApiCubit<T> extends Cubit<ApiCubitState<T>> {
       } else if (event.apiHttpStatus == ApiHttpStatus.unknown) {
         emit(ApiCubitState<T>.unknown());
       }  else if (event.apiHttpStatus == ApiHttpStatus.error) {
+        logErr("error: ${event.apiException}");
         emit(ApiCubitState<T>.error(error: event.apiException!));
       } else if (event.apiHttpStatus == ApiHttpStatus.succeeded) {
         emit(ApiCubitState<T>.succeeded(values: event.value as T));
@@ -50,14 +52,14 @@ abstract class ApiCubit<T> extends Cubit<ApiCubitState<T>> {
   }
 }
 
-final class UserInfoApiCubit extends ApiCubit<UserInfo> {
+final class UserInfoApiCubit extends _ApiCubit<UserInfo> {
   UserInfoApiCubit({required super.repository});
 }
 
-final class ClassListApiCubit extends ApiCubit<List<ClassInfo>> {
+final class ClassListApiCubit extends _ApiCubit<List<ClassInfo>> {
   ClassListApiCubit({required super.repository});
 }
 
-final class UserListApiCubit extends ApiCubit<List<UserInfo>> {
+final class UserListApiCubit extends _ApiCubit<List<UserInfo>> {
   UserListApiCubit({required super.repository});
 }

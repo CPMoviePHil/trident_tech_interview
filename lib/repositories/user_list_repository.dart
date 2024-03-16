@@ -1,7 +1,7 @@
 import '../api/api_helper.dart';
-import '../models/enums/user_type.dart';
 import '../models/models.dart';
 
+import '../models/user_list_request.dart';
 import '../utils/constants.dart';
 import '../utils/mock_data.dart';
 
@@ -13,10 +13,10 @@ final class UserListRepository extends BaseRepository<List<UserInfo>> {
     if (kUseMockData) {
       return ApiResponse<List<UserInfo>>.fromJson(mockDataTeacherList);
     } else {
-      final UserType userType = param as UserType;
+      final UserListRequest request = param as UserListRequest;
       ApiResponse<List<UserInfo>> response;
       try {
-        response = await apiClient.getUserList(userType.index);
+        response = await apiClient.getUserList(request);
       } catch (error) {
         final ApiException exception = ApiException.withError(error: error);
         throw exception;
@@ -31,7 +31,7 @@ final class UserListRepository extends BaseRepository<List<UserInfo>> {
   }
 
   @override
-  Future<void> call2<UserType>(UserType param, {bool loading = true}) async {
-    request2<UserType>(_request, param, loading: loading);
+  Future<void> call2<UserListRequest>(UserListRequest param, {bool loading = true}) async {
+    request2<UserListRequest>(_request, param, loading: loading);
   }
 }
