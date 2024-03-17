@@ -11,6 +11,7 @@ class ClassInfo extends Equatable {
     required this.className,
     required this.classTime,
     required this.createdAt,
+    required this.desc,
     this.updatedAt,
   });
 
@@ -20,10 +21,11 @@ class ClassInfo extends Equatable {
   final String className;
   final String classTime;
   final String createdAt;
+  final String desc;
   final String? updatedAt;
 
   Map<String, dynamic> toJson() => _$ClassInfoToJson(this);
 
   @override
-  List<Object?> get props => [classId, className, classTime, createdAt, updatedAt];
+  List<Object?> get props => [classId, className, classTime, createdAt, desc, updatedAt];
 }

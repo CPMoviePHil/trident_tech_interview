@@ -9,5 +9,12 @@
   "demonstrator": "Demonstrator",
   "lecturer": "Lecturer",
   "senior_lecturer": "Senior Lecturer",
-  "professor": "Professor"
+  "professor": "Professor",
+  "class_detail_title": "Class Detail Description",
+  "page_not_found": "Page Not Found",
+  "desc": "Description",
+  "class_name": "Class Name",
+  "name": "Name",
+  "class_time": "Class Time",
+  "class_desc": "Class Desc"
 }

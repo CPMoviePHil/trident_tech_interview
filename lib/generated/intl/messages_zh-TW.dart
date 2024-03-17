@@ -25,12 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "change_lang_alert": m0,
+        "class_desc": MessageLookupByLibrary.simpleMessage("課程簡介"),
+        "class_detail_title": MessageLookupByLibrary.simpleMessage("課程介紹"),
         "class_list": MessageLookupByLibrary.simpleMessage("課程清單"),
+        "class_name": MessageLookupByLibrary.simpleMessage("課程名稱"),
+        "class_time": MessageLookupByLibrary.simpleMessage("上課時間"),
         "demonstrator": MessageLookupByLibrary.simpleMessage("簡報者"),
+        "desc": MessageLookupByLibrary.simpleMessage("簡介"),
         "language_setting_title": MessageLookupByLibrary.simpleMessage("語系"),
         "lecturer": MessageLookupByLibrary.simpleMessage("講師"),
         "lecturer_list": MessageLookupByLibrary.simpleMessage("講師清單"),
+        "name": MessageLookupByLibrary.simpleMessage("姓名"),
         "page_loading_error": MessageLookupByLibrary.simpleMessage("載入錯誤"),
+        "page_not_found": MessageLookupByLibrary.simpleMessage("找不到頁面"),
         "professor": MessageLookupByLibrary.simpleMessage("教授"),
         "senior_lecturer": MessageLookupByLibrary.simpleMessage("資深講師"),
         "student_list": MessageLookupByLibrary.simpleMessage("學生清單")

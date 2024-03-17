@@ -149,6 +149,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Class Detail Description`
+  String get class_detail_title {
+    return Intl.message(
+      'Class Detail Description',
+      name: 'class_detail_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Page Not Found`
+  String get page_not_found {
+    return Intl.message(
+      'Page Not Found',
+      name: 'page_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get desc {
+    return Intl.message(
+      'Description',
+      name: 'desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Class Name`
+  String get class_name {
+    return Intl.message(
+      'Class Name',
+      name: 'class_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Class Time`
+  String get class_time {
+    return Intl.message(
+      'Class Time',
+      name: 'class_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Class Desc`
+  String get class_desc {
+    return Intl.message(
+      'Class Desc',
+      name: 'class_desc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

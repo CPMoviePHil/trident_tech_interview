@@ -19,6 +19,7 @@ class UserInfo extends Equatable {
     this.updatedAt,
     this.userName,
     this.userAvatar,
+    this.userDesc,
     this.classes = const <ClassInfo>[],
   });
 
@@ -32,6 +33,7 @@ class UserInfo extends Equatable {
   final String? updatedAt;
   final String? userName;
   final String? userAvatar;
+  final String? userDesc;
   final List<ClassInfo> classes;
 
   Map<String, dynamic> toJson() => _$UserInfoToJson(this);
@@ -39,5 +41,5 @@ class UserInfo extends Equatable {
   UserType get getUserType => UserType.values.firstWhereOrNull((x) => x.index == userType) ?? UserType.unknown;
 
   @override
-  List<Object?> get props => [userId, account, createdAt, userType, updatedAt, userName, userAvatar, classes];
+  List<Object?> get props => [userId, account, createdAt, userType, updatedAt, userName, userAvatar, userDesc, classes];
 }

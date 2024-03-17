@@ -3,6 +3,7 @@ import '../models/models.dart';
 
 import '../models/user_list_request.dart';
 import '../utils/constants.dart';
+import '../utils/log_util.dart';
 import '../utils/mock_data.dart';
 
 import 'base_repository.dart';
@@ -11,13 +12,22 @@ final class UserListRepository extends BaseRepository<List<UserInfo>> {
 
   Future<ApiResponse<List<UserInfo>>> _request<P>(P param) async {
     if (kUseMockData) {
-      return ApiResponse<List<UserInfo>>.fromJson(mockDataTeacherList);
+      ApiResponse<List<UserInfo>> response;
+      try {
+        response = ApiResponse<List<UserInfo>>.fromJson(mockDataTeacherList);
+      } catch (error) {
+        logErr("error: $error");
+        final ApiException exception = ApiException.withError(error: error);
+        throw exception;
+      }
+      return response;
     } else {
       final UserListRequest request = param as UserListRequest;
       ApiResponse<List<UserInfo>> response;
       try {
         response = await apiClient.getUserList(request);
       } catch (error) {
+        logErr("error:$error");
         final ApiException exception = ApiException.withError(error: error);
         throw exception;
       }

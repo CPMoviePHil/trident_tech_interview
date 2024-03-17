@@ -9,5 +9,12 @@
   "demonstrator": "簡報者",
   "lecturer": "講師",
   "senior_lecturer": "資深講師",
-  "professor": "教授"
+  "professor": "教授",
+  "class_detail_title": "課程介紹",
+  "page_not_found": "找不到頁面",
+  "desc": "簡介",
+  "class_name": "課程名稱",
+  "name": "姓名",
+  "class_time": "上課時間",
+  "class_desc": "課程簡介"
 }

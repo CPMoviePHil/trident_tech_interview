@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../blocs/value_notifier_cubit.dart';
+
 import '../models/class_info.dart';
 import '../models/user_info.dart';
+
 import '../utils/image_util.dart';
 import '../utils/extension.dart';
-import '../utils/log_util.dart';
+import '../utils/router.dart';
 
 class UserInfoCard extends StatelessWidget {
 
@@ -76,7 +79,7 @@ class UserInfoCard extends StatelessWidget {
           BlocBuilder<ShowClassDetailCubit, bool>(
             builder: (context, state) {
               if (state) {
-                return ClassDetailView(classes: _userInfo.classes);
+                return ClassSimpleDetailView(userInfo: _userInfo);
               } else {
                 return const SizedBox();
               }
@@ -88,29 +91,39 @@ class UserInfoCard extends StatelessWidget {
   );
 }
 
-class ClassDetailView extends StatelessWidget {
+class ClassSimpleDetailView extends StatelessWidget {
 
-  const ClassDetailView({super.key, required List<ClassInfo> classes}) : _classes = classes;
-  final List<ClassInfo> _classes;
+  const ClassSimpleDetailView({
+    super.key,
+    required UserInfo userInfo,
+  }) :  _userInfo = userInfo;
+
+  final UserInfo _userInfo;
 
   @override
   Widget build(BuildContext context) => Column(
     children: <Widget>[
       const SizedBox(height: 15),
       const Divider(height: 1, color: Colors.grey),
-      for (final value in _classes)
-        ClassDetailDescRow(
+      for (final ClassInfo value in _userInfo.classes)
+        ClassSimpleDetailDescRow(
           text: value.className,
           desc: value.classTime,
-          onTap: () => logMsg("className: ${value.className}"),
+          onTap: () => context.push(
+            rClassDetail,
+            extra: {
+              "classInfo": value,
+              "userInfo": _userInfo,
+            },
+          ),
         ),
     ],
   );
 }
 
-class ClassDetailDescRow extends StatelessWidget {
+class ClassSimpleDetailDescRow extends StatelessWidget {
 
-  const ClassDetailDescRow({
+  const ClassSimpleDetailDescRow({
     super.key,
     required String text,
     required String desc,
