@@ -7,14 +7,14 @@ import '../utils/mock_data.dart';
 
 import 'base_repository.dart';
 
-final class UserInfoRepository extends BaseRepository<UserInfo> {
+final class UserInfoRepository extends BaseRepository<UserInfo?> {
 
-  Future<ApiResponse<UserInfo>> _request<P>(P param) async {
+  Future<ApiResponse<UserInfo?>> _request<P>(P param) async {
     if (kUseMockData) {
-      return ApiResponse<UserInfo>.fromJson(mockDataUserInfo);
+      return ApiResponse<UserInfo?>.fromJson(mockDataUserInfo);
     } else {
       final String userId = param as String;
-      ApiResponse<UserInfo> response;
+      ApiResponse<UserInfo?> response;
       try {
         response = await apiClient.getUserInfo(userId);
       } catch (error) {
@@ -24,6 +24,8 @@ final class UserInfoRepository extends BaseRepository<UserInfo> {
       return response;
     }
   }
+
+  UserInfoRepository({super.dio});
 
   @override
   Future<void> call({bool loading = true}) {

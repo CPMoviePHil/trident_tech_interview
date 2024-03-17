@@ -1,3 +1,5 @@
+import 'package:trident_tech_interview/utils/log_util.dart';
+
 import '../api/api_helper.dart';
 
 import '../models/models.dart';
@@ -23,6 +25,8 @@ final class ClassListRepository extends BaseRepository<List<ClassInfo>> {
       return response;
     }
   }
+
+  ClassListRepository({super.dio});
 
   @override
   Future<void> call({bool loading = true}) async {

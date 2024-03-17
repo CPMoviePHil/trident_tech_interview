@@ -12,9 +12,9 @@ final class ApiCubitState<T> extends Equatable {
     this.error,
   });
 
-  const ApiCubitState.succeeded({required T values}) : this._(
+  const ApiCubitState.succeeded({required T value}) : this._(
     apiHttpStatus: ApiHttpStatus.succeeded,
-    v: values,
+    v: value,
   );
 
   const ApiCubitState.error({

@@ -21,13 +21,13 @@ class _RestApiClient implements RestApiClient {
   String? baseUrl;
 
   @override
-  Future<ApiResponse<UserInfo>> getUserInfo(String userId) async {
+  Future<ApiResponse<UserInfo?>> getUserInfo(String userId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'userId': userId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ApiResponse<UserInfo>>(Options(
+        _setStreamType<ApiResponse<UserInfo?>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -43,7 +43,7 @@ class _RestApiClient implements RestApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ApiResponse<UserInfo>.fromJson(_result.data!);
+    final value = ApiResponse<UserInfo?>.fromJson(_result.data!);
     return value;
   }
 

@@ -2,13 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/models.dart';
-
 import '../models/user_list_request.dart';
+
+import '../utils/constants.dart';
+
 import 'api_response.dart';
 
 part 'rest_api_client.g.dart';
 
-@RestApi(baseUrl: "https://example.com")
+@RestApi(baseUrl: kApiBaseUrl)
 abstract class RestApiClient {
 
   factory RestApiClient(
@@ -24,15 +26,15 @@ abstract class RestApiClient {
   }
 
   // 使用者資訊
-  @GET("/api/user/info")
-  Future<ApiResponse<UserInfo>> getUserInfo(@Query("userId") String userId);
+  @GET(userInfoPath)
+  Future<ApiResponse<UserInfo?>> getUserInfo(@Query("userId") String userId);
 
   // 課程列表
-  @GET("/api/class/list")
+  @GET(classListPath)
   Future<ApiResponse<List<ClassInfo>>> getClassList();
 
   // 授課講師列表
-  @GET("/api/user/list")
+  @GET(userListPath)
   Future<ApiResponse<List<UserInfo>>> getUserList(@Body() UserListRequest request);
 
   // 授課講師所開課程列表

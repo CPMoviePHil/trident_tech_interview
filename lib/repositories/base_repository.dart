@@ -21,8 +21,8 @@ abstract class BaseRepository<T>{
     yield* _controller.stream;
   }
 
-  BaseRepository() {
-    _restApiClient = RestApiClient(_dio, baseUrl: kApiBaseUrl);
+  BaseRepository({Dio? dio}) {
+    _restApiClient = RestApiClient(dio ?? _dio, baseUrl: kApiBaseUrl);
   }
 
   Future<void> call({bool loading = true});

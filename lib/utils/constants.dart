@@ -1,8 +1,13 @@
 import 'dart:ui';
 
-const bool kUseMockData = true;
+bool kUseMockData = true;
 
 const String kApiBaseUrl = "https://example.com";
+
+const String classListPath = "/api/class/list";
+const String userListPath = "/api/user/list";
+const String userInfoPath = "/api/user/info";
+
 const Locale kLocale = Locale("zh", "TW");
 
 final Map<Locale, String> kLocaleMsg = <Locale, String>{

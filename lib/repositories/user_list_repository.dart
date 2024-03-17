@@ -17,7 +17,6 @@ final class UserListRepository extends BaseRepository<List<UserInfo>> {
       try {
         response = ApiResponse<List<UserInfo>>.fromJson(mockDataTeacherList);
       } catch (error) {
-        logErr("error: $error");
         final ApiException exception = ApiException.withError(error: error);
         throw exception;
       }
@@ -28,13 +27,14 @@ final class UserListRepository extends BaseRepository<List<UserInfo>> {
       try {
         response = await apiClient.getUserList(request);
       } catch (error) {
-        logErr("error:$error");
         final ApiException exception = ApiException.withError(error: error);
         throw exception;
       }
       return response;
     }
   }
+
+  UserListRepository({super.dio});
 
   @override
   Future<void> call({bool loading = true}) {
