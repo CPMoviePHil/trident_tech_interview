@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 
 import '../models/class_info.dart';
 import '../models/user_info.dart';
+
 import '../pages/class_detail.dart';
 import '../pages/home.dart';
 import '../pages/language_setting.dart';

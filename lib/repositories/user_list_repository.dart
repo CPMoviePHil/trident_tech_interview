@@ -1,7 +1,8 @@
 import '../api/api_helper.dart';
-import '../models/models.dart';
 
+import '../models/models.dart';
 import '../models/user_list_request.dart';
+
 import '../utils/constants.dart';
 import '../utils/log_util.dart';
 import '../utils/mock_data.dart';

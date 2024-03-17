@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import '../generated/l10n.dart';
+
 import '../models/enums/user_type.dart';
 
 import 'constants.dart';

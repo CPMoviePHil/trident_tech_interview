@@ -3,12 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/api_cubit.dart';
 import '../blocs/value_notifier_cubit.dart';
+
 import '../generated/l10n.dart';
+
 import '../models/enums/api_http_status.dart';
 import '../models/enums/user_type.dart';
 import '../models/user_info.dart';
 import '../models/user_list_request.dart';
+
 import '../repositories/user_list_repository.dart';
+
 import '../views/user_info_card.dart';
 
 class LecturerList extends StatelessWidget {

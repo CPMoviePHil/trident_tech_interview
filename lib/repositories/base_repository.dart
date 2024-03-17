@@ -8,7 +8,6 @@ import '../models/enums/api_http_status.dart';
 import '../models/models.dart';
 
 import '../utils/constants.dart';
-import '../utils/log_util.dart';
 
 abstract class BaseRepository<T>{
 

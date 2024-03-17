@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:trident_tech_interview/utils/router.dart';
+
+import '../utils/router.dart';
 
 import '../generated/l10n.dart';
 
@@ -29,13 +30,13 @@ class _HomeState extends State<Home> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _HomePageButton(
-          key: const Key("#student_list"),
-          onTap: () {
-
-          },
-          buttonText: S.of(context).student_list,
-        ),
+        // _HomePageButton(
+        //   key: const Key("#student_list"),
+        //   onTap: () {
+        //
+        //   },
+        //   buttonText: S.of(context).student_list,
+        // ),
         const SizedBox(height: 10),
         _HomePageButton(
           key: const Key("#lecturer_list"),
@@ -43,13 +44,13 @@ class _HomeState extends State<Home> {
           buttonText: S.of(context).lecturer_list,
         ),
         const SizedBox(height: 10),
-        _HomePageButton(
-          key: const Key("#class_list"),
-          onTap: () {
-
-          },
-          buttonText: S.of(context).class_list,
-        ),
+        // _HomePageButton(
+        //   key: const Key("#class_list"),
+        //   onTap: () {
+        //
+        //   },
+        //   buttonText: S.of(context).class_list,
+        // ),
       ],
     ),
   );
